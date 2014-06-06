@@ -1450,18 +1450,7 @@ var commands = exports.commands = {
 	* Trainer Cards                        *
 	***************************************/
 
-	freddycakes: function(target, room, user) {
-        if (!this.canBroadcast()) return;
-        this.sendReplyBox('<center><img src="http://24.media.tumblr.com/tumblr_mb1gpbUJJ61qaven0o1_500.gif" weight="150" height="200">' +
-'<b> </b> <br />' + 
-'<b>Name:</b> Freddycakes<br />' +
-'<b>Ace:</b> Meloetta<br />' +
-'<b>Location:</b> America<br />' +
-'<b>Age:</b> 14<br />' +
-'<b>Gender:</b> Female<br />' +
-'<b>Rank:</b> Administrator<br />' );
-                
-    	},thepoisonmirage: function(target, room, user) {
+        thepoisonmirage: function(target, room, user) {
         if (!this.canBroadcast()) return;
         this.sendReplyBox('<center><img src="http://25.media.tumblr.com/65f141941341116a4a858dff1a7ab430/tumblr_mla284aXnR1qhd8sao1_500.gif" weight="150" height="200">' +
 '<b> </b> <br />' + 
@@ -1481,28 +1470,6 @@ var commands = exports.commands = {
 '<b>Location:</b> America<br />' +
 '<b>Age:</b> 12<br />' +
 '<b>Gender:</b> Male<br />' +
-'<b>Rank:</b> Leader<br />' );
-        
-		},snooppingus: function(target, room, user) {
-        if (!this.canBroadcast()) return;
-        this.sendReplyBox('<center><img src="http://img3.wikia.nocookie.net/__cb20120417225012/yuyuhakusho/images/7/74/Yusuke%27s_Spirit_Gun_op3.gif" weight="150" height="200">' +
-'<b> </b> <br />' + 
-'<b>Name:</b> snoop pingus<br />' +
-'<b>Ace:</b> Goku<br />' +
-'<b>Location:</b> Planet Namek<br />' +
-'<b>Age:</b> Quince<br />' +
-'<b>Gender:</b> Male<br />' +
-'<b>Rank:</b> Leader<br />' );         
-        
-		},hayleysworld: function(target, room, user) {
-        if (!this.canBroadcast()) return;
-        this.sendReplyBox('<center><img src="http://www.pkparaiso.com/imagenes/xy/sprites/animados/vaporeon-4.gif" weight="150" height="200">' +
-'<b> </b> <br />' + 
-'<b>Name:</b> hayleysworld<br />' +
-'<b>Ace:</b> Vaporeon<br />' +
-'<b>Location:</b> Spirit World<br />' +
-'<b>Age:</b> 19<br />' +
-'<b>Gender:</b> Female<br />' +
 '<b>Rank:</b> Leader<br />' );
         
 		},hunter: function(target, room, user) {
