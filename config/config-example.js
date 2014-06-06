@@ -139,11 +139,8 @@ exports.herokuhack = false;
 // displayed in the client.
 exports.customavatars = {
         'thepoisonmirage': 'crobat.gif',
-        'snooppingus': 'giphy.gif',
-        'hayleysworld': 'vaporeon.gif',
         'eviloftenloses4': 'gible.gif',
         'ksnake789': 'pin.gif',
-        'freddycakes': 'looker.gif',
         'hydreigonhunter': 'ray.gif',
         'megamaple': 'blast.gif',
         '00tylerp': 'lev.gif',
