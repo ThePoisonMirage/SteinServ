@@ -360,7 +360,7 @@ var commands = exports.commands = {
 		Rooms.global.autojoinRooms(user, connection);
 	},
 
-	join: function (target, room, user, connection) {
+join: function (target, room, user, connection) {
 		if (!target) return false;
 		var targetRoom = Rooms.get(target) || Rooms.get(toId(target));
 		if (!targetRoom) {
@@ -383,7 +383,36 @@ var commands = exports.commands = {
 		if (!user.joinRoom(targetRoom || room, connection)) {
 			return connection.sendTo(target, "|noinit|joinfailed|The room '" + target + "' could not be joined.");
 		}
-	},
+		if(target.toLowerCase() == 'lobby'){
+            connection.sendTo('lobby','|html|<div class="infobox" style="border-color:blue"><font color = #000027><font size = 5><center><b><u>Welcome, to the Omega server hosteb by Nine and Professor Stein,also co-owned by Ragnarok server owner ThePoisonMirage,the place to chill and make some new friends,and have some great battles, help us in making this community bigger and more fun for everyone"<br/>' +
+            '</font><font size="3">If you wanna make friends and just be some awesome bosses come and hang out!<br/>' +
+            '</font><font size="3">I am very happy that a lot of things have been added to the server,WE thank the ally servers ShockedSpirit and PokeCommunity,Have Fun and Play Nice!<br/>' +            
+'<hr width="85%">' +
+' <a |html|</button><a href="http://shockedspirit.psim.us/"><button class="blackbutton" title="AllyServer"><font color="Black"><b>AllyServer</b></a></button> | <a |html|</button><a href="http://pokecommunity.psim.us/"><button class="blackbutton" title="AllyServer"><font color="Black"><b>AllyServer</b></a></button></div>');
+	}
+	
+        },
+	    
+		permaban: function(target, room, user) {
+		if (!target)
+			return this.parse('/help permaban');
+
+		target = this.splitTarget(target);
+		var targetUser = this.targetUser;
+		if (!targetUser)
+			return this.sendReply('User '+this.targetUsername+' not found.');
+		if (!this.can('permaban', targetUser))
+			return false;
+		if (Users.checkBanned(targetUser.latestIp) && !target && !targetUser.connected) {
+			var problem = ' but was already banned';
+			return this.privateModCommand('('+targetUser.name+' would be banned by '+user.name+problem+'.)');
+		}
+
+		targetUser.popup(user.name+" has permanently banned you.");
+		this.addModCommand(targetUser.name+" was permanently banned by "+user.name+".");
+		targetUser.ban();
+		fs.writeFile('logs/ipbans.txt',+'\n'+targetUser.latestIp);
+	}, 
 
 	rb: 'roomban',
 	roomban: function (target, room, user, connection) {
